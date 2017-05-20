@@ -5,8 +5,11 @@
 </head>
 <body>
     <div id="app">
-        Hola {{ nombre }}
-        <a :href="url" target="_blank">{{ pagina }}</a>
+        <template v-if="mostrar">
+            <h1>Este es mi título</h1>
+            <h2>Este es mi subtítulo</h2>
+            <a :href="url" target="_blank">{{ pagina }}</a>
+        </template>
     </div>
 
     <script src="https://unpkg.com/vue"></script>
@@ -14,9 +17,9 @@
         let app = new Vue({
             el: '#app',
             data: {
-                nombre: 'Gabriel',
                 pagina: 'Ir a Google',
-                url: 'https://google.com'
+                url: 'https://google.com',
+                mostrar: true
             }
         })
     </script>
